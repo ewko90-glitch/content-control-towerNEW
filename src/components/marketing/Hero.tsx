@@ -70,7 +70,7 @@ export function Hero() {
               Zaloguj się
             </Link>
           </div>
-          <p className="mt-3 text-sm text-gray-400">Bez karty kredytowej. Bez zobowiązań.</p>
+          <p className="mt-3 text-sm text-gray-400">14 dni za darmo. Zacznij w 60 sekund. Anuluj kiedy chcesz.</p>
 
           {/* Platform pills */}
           <div className="mt-8 flex flex-wrap justify-center gap-2">

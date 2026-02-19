@@ -47,7 +47,7 @@ export function Footer() {
       <div className="bg-[#5B7CFA] py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-bold text-white md:text-4xl">Testuj przez 14 dni za darmo</h2>
-          <p className="mt-3 text-blue-100">Bez karty kredytowej. Anuluj kiedy chcesz.</p>
+          <p className="mt-3 text-blue-100">14 dni pełnego dostępu. Zacznij w 60 sekund.</p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/auth/register"

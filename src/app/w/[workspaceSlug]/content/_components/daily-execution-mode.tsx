@@ -112,10 +112,6 @@ export function DailyExecutionMode({
   onRecordFocusOutcome,
   focusAccess = { status: "ok" },
 }: DailyExecutionModeProps) {
-  if (focusAccess.status !== "ok") {
-    return <FeatureLockCard tytulFunkcji="Tryb skupienia" access={focusAccess} />;
-  }
-
   const [showRationale, setShowRationale] = useState(false);
   const [activeSession, setActiveSession] = useState<FocusSessionPayload | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
@@ -132,6 +128,10 @@ export function DailyExecutionMode({
   const [selectedAssigneeId, setSelectedAssigneeId] = useState("self");
   const isHighPressure = weeklyPressureScore >= 70;
   const didEmitStackBuild = useRef(false);
+
+  if (focusAccess.status !== "ok") {
+    return <FeatureLockCard tytulFunkcji="Tryb skupienia" access={focusAccess} />;
+  }
 
   function toEstMins(value: "15m" | "30m" | "60m"): 15 | 30 | 60 {
     if (value === "15m") {

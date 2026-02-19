@@ -136,9 +136,9 @@ export function Kalkulator() {
               Sprawdź w praktyce – za darmo
             </Link>
             <p className="mt-3 text-sm text-blue-100">
-              Załóż 14-dniowe konto próbne.
+              14 dni pełnego dostępu. Zero ryzyka.
               <br />
-              Bez karty kredytowej.
+              Zacznij już dziś i przekonaj się sam.
             </p>
           </div>
         </div>

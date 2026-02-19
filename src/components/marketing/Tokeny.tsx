@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Jak wygląda darmowy okres próbny?",
-    a: "14 dni bez karty kredytowej. Masz dostęp do wszystkich funkcji. Po okresie próbnym wybierasz plan lub rezygnujesz.",
+    a: "14 dni pełnego dostępu do wszystkich funkcji. Po okresie próbnym wybierasz plan dopasowany do skali swojego biznesu lub rezygnujesz — bez żadnych konsekwencji.",
   },
   {
     q: "Czy mogę używać narzędzia z zespółem?",

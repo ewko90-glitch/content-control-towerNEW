@@ -51,8 +51,8 @@ export function RegisterForm({ error }: RegisterFormProps) {
 
         <h1 className="text-3xl font-bold text-gray-900">Załóż swoje konto</h1>
         <p className="mt-2 text-sm text-gray-500">
-          14 dni za darmo. Anuluj w każdej chwili.{" "}
-          <strong className="text-gray-900">Karta kredytowa nie jest wymagana</strong>
+          14 dni pełnego dostępu.{" "}
+          <strong className="text-gray-900">Dołącz do 12 000+ marketerów i agencji.</strong>
         </p>
 
         {error && (
