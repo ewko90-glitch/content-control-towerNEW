@@ -1,37 +1,37 @@
 const steps = [
   {
     num: "01",
-    title: "Pod\u0142\u0105cz swoje konta social media",
+    title: "Podłącz swoje konta social media",
     description:
-      "Kilka klikni\u0119\u0107 i Social AI Studio ma dost\u0119p do Twojego Instagrama, Facebooka, LinkedIn, TikToka i X. Bez skomplikowanej konfiguracji.",
+      "Kilka kliknięć i Social AI Studio ma dostęp do Twojego Instagrama, Facebooka, LinkedIn, TikToka i X. Bez skomplikowanej konfiguracji.",
     visual: [
-      "Instagram pod\u0142\u0105czony \u2713",
-      "Facebook pod\u0142\u0105czony \u2713",
-      "LinkedIn pod\u0142\u0105czony \u2713",
-      "TikTok pod\u0142\u0105czony \u2713",
+      "Instagram podłączony ✓",
+      "Facebook podłączony ✓",
+      "LinkedIn podłączony ✓",
+      "TikTok podłączony ✓",
     ],
   },
   {
     num: "02",
-    title: "AI generuje tre\u015bci dla Twojej marki",
+    title: "AI generuje treści dla Twojej marki",
     description:
-      "Podaj temat, ton i platform\u0119. Asystent AI napisze gotowy post z hashtagami, emoji i CTA \u2014 dopasowany do algorytmu ka\u017cdej platformy.",
+      "Podaj temat, ton i platformę. Asystent AI napisze gotowy post z hashtagami, emoji i CTA — dopasowany do algorytmu każdej platformy.",
     visual: [
       'Wpisz temat: "Nowy produkt w ofercie"',
       "Wybierz ton: profesjonalny",
       "Kliknij: Generuj post",
-      "Gotowe w 3 sekundy \ud83d\ude80",
+      "Gotowe w 3 sekundy 🚀",
     ],
   },
   {
     num: "03",
     title: "Zaplanuj i publikuj automatycznie",
     description:
-      "Wybierz dat\u0119 i godzin\u0119. Social AI Studio opublikuje post dok\u0142adnie wtedy, kiedy Twoja spo\u0142eczno\u015b\u0107 jest najbardziej aktywna.",
+      "Wybierz datę i godzinę. Social AI Studio opublikuje post dokładnie wtedy, kiedy Twoja społeczność jest najbardziej aktywna.",
     visual: [
-      "Pon 9:00 \u2014 Instagram post",
-      "Wt 12:00 \u2014 LinkedIn artyku\u0142",
-      "Czw 18:00 \u2014 Facebook reel",
+      "Pon 9:00 — Instagram post",
+      "Wt 12:00 — LinkedIn artykuł",
+      "Czw 18:00 — Facebook reel",
     ],
   },
 ];
@@ -42,13 +42,13 @@ export function Funkcjonalnosci() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <span className="mb-4 inline-block rounded-full bg-[#EEF2FF] px-4 py-1.5 text-sm font-medium text-[#5B7CFA]">
-            JAK TO DZIA\u0141A
+            JAK TO DZIAŁA
           </span>
           <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
-            Trzy kroki do pe\u0142nej automatyzacji
+            Trzy kroki do pełnej automatyzacji
           </h2>
           <p className="mt-4 text-gray-500">
-            Bez technicznej wiedzy. Bez godzin sp\u0119dzonych na pisaniu post\u00f3w.
+            Bez technicznej wiedzy. Bez godzin spędzonych na pisaniu postów.
           </p>
         </div>
 
