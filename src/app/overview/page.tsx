@@ -12,6 +12,7 @@ import type { ActionTarget } from "@/lib/domain/controlTowerV3/index";
 import { prisma } from "@/lib/prisma";
 import { cn } from "@/styles/cn";
 
+import { WelcomeFeatureCards } from "@/components/ui/WelcomeFeatureCards";
 import { WelcomeModal } from "@/components/ui/WelcomeModal";
 import { requireUser } from "../../lib/auth/session";
 
@@ -912,6 +913,9 @@ export default async function OverviewPage({ searchParams }: OverviewPageProps) 
       )}
         </>
       )}
+
+      {/* ── KARTY FUNKCJI (jak NapoleonCat welcome screen) ── */}
+      <WelcomeFeatureCards workspaceSlug={activeMembership.workspace.slug} />
     </AppShell>
   );
 }
