@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { type ReactElement, useState } from "react";
 
 // ── Types ──────────────────────────────────────────────
 type Step = 1 | 2 | 3;
@@ -31,7 +31,7 @@ const challenges = [
 type Platform = {
   id: string;
   name: string;
-  icon: JSX.Element;
+  icon: ReactElement;
   color: string;
   badge?: string;
   category: "social" | "blog" | "ads" | "other";
@@ -233,6 +233,7 @@ export function OnboardingWizard() {
                 <select
                   value={businessType}
                   onChange={(e) => setBusinessType(e.target.value)}
+                  aria-label="Rodzaj działalności"
                   className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#5B7CFA] focus:ring-2 focus:ring-[#5B7CFA]/20"
                 >
                   <option value="">Wybierz rodzaj działalności</option>
