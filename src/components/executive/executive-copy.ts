@@ -1,0 +1,15 @@
+export const executiveCopy = {
+  title: "Executive Summary",
+  generated: "Generated",
+  exportPdf: "Export PDF",
+  modeOn: "Tryb Executive",
+  modeOffCta: "Pokaż Executive Summary",
+  kpis: "KPI",
+  risks: "Risks",
+  strategy: "Strategy",
+  actions: "Next Actions",
+  decisions: "Recent Decisions",
+  noStrategy: "Brak przyjętej strategii",
+  noActions: "Brak priorytetowych działań.",
+  noDecisions: "Brak decyzji operacyjnych.",
+} as const;

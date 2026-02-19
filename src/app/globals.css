@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply min-h-full;
+  }
+
+  body {
+    @apply bg-bg text-text antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-text;
+  }
+
+  a {
+    @apply text-primary transition-colors duration-fast ease-base hover:text-primary/80;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-focusRing ring-offset-2 ring-offset-bg;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+}
+

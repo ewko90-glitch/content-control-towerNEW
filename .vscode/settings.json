@@ -1,0 +1,22 @@
+{
+  "css.validate": false,
+  "css.lint.compatibleVendorPrefixes": "ignore",
+  "mssql.intelliSense.enableErrorChecking": false,
+  "problems.exclude": {
+    "**/.next/**": true,
+    "prisma/migrations/**/*.sql": true
+  },
+  "files.associations": {
+    "prisma/migrations/**/*.sql": "plaintext",
+    "**/.next/**/*.css": "plaintext"
+  },
+  "files.exclude": {
+    "**/.next": true
+  },
+  "files.watcherExclude": {
+    "**/.next/**": true
+  },
+  "search.exclude": {
+    "**/.next": true
+  }
+}
