@@ -3,6 +3,7 @@ import { Footer } from "@/components/marketing/Footer";
 import { Funkcjonalnosci } from "@/components/marketing/Funkcjonalnosci";
 import { Hero } from "@/components/marketing/Hero";
 import { JakToDziala } from "@/components/marketing/JakToDziala";
+import { Kalkulator } from "@/components/marketing/Kalkulator";
 import { Navbar } from "@/components/marketing/Navbar";
 import { Tokeny } from "@/components/marketing/Tokeny";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Hero />
       <JakToDziala />
       <Funkcjonalnosci />
+      <Kalkulator />
       <Cennik />
       <Tokeny />
       <Footer />
