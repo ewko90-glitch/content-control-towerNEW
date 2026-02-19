@@ -99,6 +99,22 @@ const PLANS = [
   },
 ];
 
+const LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const;
+
+function ProgressBar({ pct }: { pct: number }) {
+  const filled = LEVELS.filter((l) => l <= pct).length;
+  return (
+    <div className="mt-1 flex h-1.5 w-24 gap-px overflow-hidden rounded-full">
+      {LEVELS.map((l, i) => (
+        <div
+          key={l}
+          className={`flex-1 ${i < filled ? "bg-[#5B7CFA]" : "bg-gray-200"}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function PlanTab({ plan, usage, workspaceId }: Props) {
   const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const currentTier = plan?.tier ?? "STARTER";
@@ -126,28 +142,14 @@ export function PlanTab({ plan, usage, workspaceId }: Props) {
                 <p className="font-semibold text-gray-900">
                   {usage?.seatsUsed ?? 1} / {plan.seatsLimit}
                 </p>
-                <div className="mt-1 h-1.5 w-24 rounded-full bg-gray-200">
-                  <div
-                    className="h-full rounded-full bg-[#5B7CFA]"
-                    style={{
-                      width: `${Math.min(100, ((usage?.seatsUsed ?? 1) / plan.seatsLimit) * 100)}%`,
-                    }}
-                  />
-                </div>
+                <ProgressBar pct={Math.min(100, ((usage?.seatsUsed ?? 1) / plan.seatsLimit) * 100)} />
               </div>
               <div>
                 <p className="text-gray-500">Projekty</p>
                 <p className="font-semibold text-gray-900">
                   {usage?.projectsUsed ?? 1} / {plan.projectsLimit}
                 </p>
-                <div className="mt-1 h-1.5 w-24 rounded-full bg-gray-200">
-                  <div
-                    className="h-full rounded-full bg-[#5B7CFA]"
-                    style={{
-                      width: `${Math.min(100, ((usage?.projectsUsed ?? 1) / plan.projectsLimit) * 100)}%`,
-                    }}
-                  />
-                </div>
+                <ProgressBar pct={Math.min(100, ((usage?.projectsUsed ?? 1) / plan.projectsLimit) * 100)} />
               </div>
               <div>
                 <p className="text-gray-500">AI kredyty / msc</p>

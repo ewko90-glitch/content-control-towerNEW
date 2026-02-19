@@ -264,6 +264,7 @@ export function TeamTab({ workspaceId, members, projects, projectMemberships }: 
             <select
               value={inviteRole}
               onChange={(e) => setInviteRole(e.target.value)}
+              aria-label="Rola użytkownika"
               className="rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none focus:border-[#5B7CFA]"
             >
               <option value="EDITOR">Edytor</option>

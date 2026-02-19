@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { getUserFromRequest } from "../../../../lib/auth/session";
-import { generateSecureToken } from "../../../../lib/auth/tokens";
-import { prisma } from "../../../../lib/prisma";
+import { getUserFromRequest } from "../../../lib/auth/session";
+import { generateSecureToken } from "../../../lib/auth/tokens";
+import { prisma } from "../../../lib/prisma";
 
 export const runtime = "nodejs";
 

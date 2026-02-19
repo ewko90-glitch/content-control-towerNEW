@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getUserFromRequest } from "../../../../../lib/auth/session";
-import { prisma } from "../../../../../lib/prisma";
+import { getUserFromRequest } from "../../../../lib/auth/session";
+import { prisma } from "../../../../lib/prisma";
 
 export const runtime = "nodejs";
 
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     where: { workspaceId, id: { in: projectIds }, deletedAt: null },
     select: { id: true },
   });
-  const validIds = new Set(validProjects.map((p) => p.id));
+  const validIds = new Set(validProjects.map((p: { id: string }) => p.id));
   const safeProjectIds = projectIds.filter((id) => validIds.has(id));
 
   // Remove all existing ProjectMemberships for this user in this workspace

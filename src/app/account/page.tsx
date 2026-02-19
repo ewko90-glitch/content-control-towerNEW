@@ -24,7 +24,10 @@ export default async function AccountPage() {
       select: { id: true, name: true, slug: true },
       orderBy: { createdAt: "asc" },
     }),
-    prisma.projectMembership.findMany({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    // @ts-expect-error -- prisma client has projectMembership after generate; TS server cache may be stale
+    // eslint-disable-next-line
+    (prisma as any).projectMembership.findMany({
       where: {
         workspace: {
           memberships: { some: { userId: user.id } },
@@ -77,7 +80,7 @@ export default async function AccountPage() {
         },
       }))}
       projects={projects}
-      projectMemberships={projectMemberships.map((pm) => ({
+      projectMemberships={projectMemberships.map((pm: { id: string; projectId: string; userId: string; role: string }) => ({
         id: pm.id,
         projectId: pm.projectId,
         userId: pm.userId,

@@ -89,6 +89,8 @@ export function ProfileTab({ user }: Props) {
             <input
               value={user.email}
               disabled
+              aria-label="Email"
+              placeholder="email@firma.pl"
               className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-400"
             />
           </div>
@@ -97,6 +99,8 @@ export function ProfileTab({ user }: Props) {
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
+              aria-label="Imię i nazwisko"
+              placeholder="Jan Kowalski"
               className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-[#5B7CFA] focus:ring-2 focus:ring-[#5B7CFA]/20"
             />
           </div>
@@ -123,16 +127,19 @@ export function ProfileTab({ user }: Props) {
           <div>
             <label className="mb-1 block text-xs font-medium text-gray-500">Stare hasło</label>
             <input type="password" value={oldPwd} onChange={(e) => setOldPwd(e.target.value)}
+              aria-label="Stare hasło" placeholder="••••••••••"
               className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-[#5B7CFA] focus:ring-2 focus:ring-[#5B7CFA]/20" />
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-gray-500">Nowe hasło</label>
             <input type="password" value={newPwd} onChange={(e) => setNewPwd(e.target.value)}
+              aria-label="Nowe hasło" placeholder="Min. 10 znaków"
               className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-[#5B7CFA] focus:ring-2 focus:ring-[#5B7CFA]/20" />
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-gray-500">Powtórz nowe hasło</label>
             <input type="password" value={repeatPwd} onChange={(e) => setRepeatPwd(e.target.value)}
+              aria-label="Powtórz nowe hasło" placeholder="Powtórz hasło"
               className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-[#5B7CFA] focus:ring-2 focus:ring-[#5B7CFA]/20" />
           </div>
           <button onClick={handlePasswordSave}

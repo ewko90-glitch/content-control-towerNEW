@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { getUserFromRequest } from "../../../../../lib/auth/session";
-import { hashPassword, verifyPassword } from "../../../../../lib/auth/password";
-import { prisma } from "../../../../../lib/prisma";
+import { getUserFromRequest } from "../../../../lib/auth/session";
+import { hashPassword, verifyPassword } from "../../../../lib/auth/password";
+import { prisma } from "../../../../lib/prisma";
 
 export const runtime = "nodejs";
 

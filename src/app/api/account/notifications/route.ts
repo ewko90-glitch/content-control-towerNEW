@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserFromRequest } from "../../../../../lib/auth/session";
+import { getUserFromRequest } from "../../../../lib/auth/session";
 
 export const runtime = "nodejs";
 
