@@ -7,7 +7,7 @@ export function Footer() {
         <p className="text-sm text-[#94A3B8]">© 2026 Content Control Tower. Zrobione w Polsce.</p>
 
         <nav className="flex flex-wrap gap-5 text-sm text-[#475569]">
-          <Link href="/login" className="hover:text-[#0F172A]">Zaloguj się</Link>
+          <Link href="/auth/login" className="hover:text-[#0F172A]">Zaloguj się</Link>
           <a href="#cennik" className="hover:text-[#0F172A]">Cennik</a>
           <Link href="/regulamin" className="hover:text-[#0F172A]">Regulamin</Link>
           <Link href="/polityka-prywatnosci" className="hover:text-[#0F172A]">Polityka prywatności</Link>

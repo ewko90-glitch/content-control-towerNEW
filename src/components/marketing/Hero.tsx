@@ -44,13 +44,13 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
-              href="/register"
+              href="/auth/register"
               className="inline-flex h-11 items-center justify-center rounded-2xl bg-[#5B7CFA] px-7 text-sm font-semibold text-white transition-colors hover:bg-[#4F6EF5]"
             >
               Rozpocznij bezpłatnie
             </Link>
             <Link
-              href="/login"
+              href="/auth/login"
               className="inline-flex h-11 items-center justify-center rounded-2xl border border-[#E2E8F0] bg-white px-7 text-sm font-semibold text-[#0F172A] transition-colors hover:bg-[#F6F8FB]"
             >
               Zaloguj się
