@@ -5,6 +5,7 @@ import { Hero } from "@/components/marketing/Hero";
 import { JakToDziala } from "@/components/marketing/JakToDziala";
 import { Kalkulator } from "@/components/marketing/Kalkulator";
 import { Navbar } from "@/components/marketing/Navbar";
+import { SeoSection } from "@/components/marketing/SeoSection";
 import { Tokeny } from "@/components/marketing/Tokeny";
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <JakToDziala />
       <Funkcjonalnosci />
+      <SeoSection />
       <Kalkulator />
       <Cennik />
       <Tokeny />

@@ -8,6 +8,8 @@ const columns = [
       { label: "Publikator", href: "#funkcje" },
       { label: "Social Inbox", href: "#funkcje" },
       { label: "Analityka", href: "#funkcje" },
+      { label: "Zarządzanie Blogiem", href: "#seo" },
+      { label: "SEO i słowa kluczowe", href: "#seo" },
       { label: "Auto-moderacja", href: "#funkcje" },
     ],
   },

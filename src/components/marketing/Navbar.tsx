@@ -5,9 +5,10 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Funkcje", href: "#funkcje" },
+  { label: "SEO i Blog", href: "#seo" },
   { label: "Platformy", href: "#platformy" },
   { label: "Cennik", href: "#cennik" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export function Navbar() {

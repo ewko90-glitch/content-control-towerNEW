@@ -25,6 +25,16 @@ const features = [
     description: "Automatycznie generuj raporty PDF dla klientów lub szefa — ze swoim logo i danymi.",
   },
   {
+    icon: "✍️",
+    title: "Zarządzanie Blogiem",
+    description: "Pisz artykuły, planuj publikacje i automatycznie trasuj treści blogowe na social media.",
+  },
+  {
+    icon: "🔍",
+    title: "SEO i słowa kluczowe",
+    description: "Analiza słów kluczowych, integracja z Google Search Console i AI optymalizacja treści pod Google.",
+  },
+  {
     icon: "👥",
     title: "Zarządzanie zespółem",
     description: "Dziel się dostępem z copywriterem, grafikiem lub klientem. Róle i uprawnienia.",
