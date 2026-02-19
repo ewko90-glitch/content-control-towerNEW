@@ -1,4 +1,5 @@
 "use client";
+// account tab: notifications
 
 import { useState } from "react";
 

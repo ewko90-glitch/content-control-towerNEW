@@ -66,7 +66,8 @@ export async function POST(request: Request) {
 
   // If existing user, create project memberships immediately
   if (existingUser && projectIds.length > 0) {
-    await prisma.projectMembership.createMany({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    await (prisma as any).projectMembership.createMany({
       data: projectIds.map((projectId) => ({
         workspaceId,
         projectId,

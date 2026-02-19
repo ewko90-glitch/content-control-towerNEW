@@ -33,11 +33,13 @@ export async function POST(request: Request) {
   const safeProjectIds = projectIds.filter((id) => validIds.has(id));
 
   // Remove all existing ProjectMemberships for this user in this workspace
-  await prisma.projectMembership.deleteMany({ where: { workspaceId, userId } });
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  await (prisma as any).projectMembership.deleteMany({ where: { workspaceId, userId } });
 
   // Re-create for chosen projects
   if (safeProjectIds.length > 0) {
-    await prisma.projectMembership.createMany({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    await (prisma as any).projectMembership.createMany({
       data: safeProjectIds.map((projectId) => ({
         workspaceId,
         projectId,
