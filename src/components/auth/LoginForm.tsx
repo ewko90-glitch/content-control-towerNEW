@@ -44,7 +44,7 @@ export function LoginForm({ error, success, next }: LoginFormProps) {
         </div>
       )}
 
-      <form action="/api/auth/login" method="post" className="space-y-3">
+      <form action="https://content-control-tower-new.vercel.app/api/auth/login" method="post" className="space-y-3">
         <input type="hidden" name="next" value={next ?? ""} />
 
         {/* Email */}

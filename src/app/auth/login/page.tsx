@@ -1,11 +1,22 @@
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
 import { LoginForm } from "@/components/auth/LoginForm";
 import Link from "next/link";
+
+const PROD = "content-control-tower-new.vercel.app";
 
 type LoginPageProps = {
   searchParams: Promise<{ error?: string; success?: string; next?: string }>;
 };
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const hdrs = await headers();
+  const host = hdrs.get("host") ?? "";
+  if (host && host !== PROD) {
+    redirect(`https://${PROD}/auth/login`);
+  }
+
   const params = await searchParams;
 
   return (

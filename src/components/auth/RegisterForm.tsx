@@ -61,7 +61,7 @@ export function RegisterForm({ error }: RegisterFormProps) {
           </div>
         )}
 
-        <form action="/api/auth/register" method="post" className="mt-6 space-y-3">
+        <form action="https://content-control-tower-new.vercel.app/api/auth/register" method="post" className="mt-6 space-y-3">
           {/* Email */}
           <div className="relative">
             <label className="absolute left-4 top-2.5 text-[11px] font-medium text-gray-400">
