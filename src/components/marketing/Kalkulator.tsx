@@ -85,7 +85,11 @@ export function Kalkulator() {
 
             {/* Slider */}
             <div className="mt-5">
+              <label htmlFor="interaction-slider" className="sr-only">
+                Liczba interakcji dziennie
+              </label>
               <input
+                id="interaction-slider"
                 type="range"
                 min={0}
                 max={4}
