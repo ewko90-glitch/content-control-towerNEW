@@ -25,7 +25,6 @@ export default async function AccountPage() {
       orderBy: { createdAt: "asc" },
     }),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    // @ts-expect-error -- prisma client has projectMembership after generate; TS server cache may be stale
     // eslint-disable-next-line
     (prisma as any).projectMembership.findMany({
       where: {

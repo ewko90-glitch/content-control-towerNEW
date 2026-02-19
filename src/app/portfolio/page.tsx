@@ -15,9 +15,7 @@ import { cn } from "@/styles/cn";
 type PortfolioFilter = "all" | "critical" | "drifting" | "strong" | "misalignment" | "no_plan";
 
 type PortfolioPageProps = {
-  searchParams?:
-    | Promise<{ filter?: string | string[] | undefined; preview?: string | string[] | undefined }>
-    | { filter?: string | string[] | undefined; preview?: string | string[] | undefined };
+  searchParams?: Promise<{ filter?: string | string[] | undefined; preview?: string | string[] | undefined }>;
 };
 
 function normalizeFilter(value: string | string[] | undefined): PortfolioFilter {
@@ -90,9 +88,7 @@ const fallbackWorkspaces = [
 ];
 
 export default async function PortfolioPage({ searchParams }: PortfolioPageProps) {
-  const resolvedSearchParams = searchParams && typeof (searchParams as Promise<unknown>).then === "function"
-    ? await (searchParams as Promise<{ filter?: string | string[] | undefined; preview?: string | string[] | undefined }>)
-    : (searchParams as { filter?: string | string[] | undefined; preview?: string | string[] | undefined } | undefined);
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
 
   const activeFilter = normalizeFilter(resolvedSearchParams?.filter);
   const isPreviewMode = normalizePreview(resolvedSearchParams?.preview);

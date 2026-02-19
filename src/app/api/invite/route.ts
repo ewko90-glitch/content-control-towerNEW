@@ -47,7 +47,7 @@ export async function POST(request: Request) {
   // Cancel old pending invite for same email
   await prisma.workspaceInvite.updateMany({
     where: { workspaceId, email: email.toLowerCase(), status: "PENDING" },
-    data: { status: "CANCELLED" },
+    data: { status: "REVOKED" as const },
   });
 
   const token = generateSecureToken(32);
