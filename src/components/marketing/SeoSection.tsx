@@ -69,7 +69,7 @@ export function SeoSection() {
             </div>
           </div>
           <a
-            href="/auth/register"
+            href="https://content-control-tower-new.vercel.app/auth/register"
             className="shrink-0 rounded-xl bg-[#5B7CFA] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
             Połącz GSC za darmo →

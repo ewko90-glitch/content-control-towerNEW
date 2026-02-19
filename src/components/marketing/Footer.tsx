@@ -52,7 +52,7 @@ export function Footer() {
           <p className="mt-3 text-blue-100">14 dni pełnego dostępu. Zacznij w 60 sekund.</p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register"
+              href="https://content-control-tower-new.vercel.app/auth/register"
               className="rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-[#5B7CFA] transition-opacity hover:opacity-90"
             >
               Rozpocznij okres próbny

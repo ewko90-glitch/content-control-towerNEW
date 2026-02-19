@@ -58,7 +58,7 @@ export function Hero() {
           {/* CTA */}
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
             <Link
-              href="/auth/register"
+              href="https://content-control-tower-new.vercel.app/auth/register"
               className="rounded-xl bg-[#5B7CFA] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#5B7CFA]/25 transition-all hover:bg-[#4a6ef0]"
             >
               Zacznij za darmo — 14 dni

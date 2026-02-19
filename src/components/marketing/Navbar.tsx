@@ -47,7 +47,7 @@ export function Navbar() {
             Zaloguj się
           </Link>
           <Link
-            href="/auth/register"
+            href="https://content-control-tower-new.vercel.app/auth/register"
             className="rounded-lg bg-[#5B7CFA] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             Wypróbuj za darmo
@@ -84,7 +84,7 @@ export function Navbar() {
               Zaloguj się
             </Link>
             <Link
-              href="/auth/register"
+              href="https://content-control-tower-new.vercel.app/auth/register"
               className="rounded-lg bg-[#5B7CFA] px-4 py-2.5 text-center text-sm font-semibold text-white"
             >
               Wypróbuj za darmo

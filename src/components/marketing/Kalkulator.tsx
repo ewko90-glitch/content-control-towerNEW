@@ -134,7 +134,7 @@ export function Kalkulator() {
             <p className="text-3xl font-bold text-white">godzin</p>
 
             <Link
-              href="/auth/register"
+              href="https://content-control-tower-new.vercel.app/auth/register"
               className="mt-8 inline-block rounded-2xl bg-yellow-400 px-8 py-4 text-base font-bold text-gray-900 transition-colors hover:bg-yellow-300"
             >
               Sprawdź w praktyce – za darmo
