@@ -48,6 +48,7 @@ export async function POST(request: Request) {
       email,
       passwordHash,
       name: name || null,
+      emailVerifiedAt: new Date(), // auto-weryfikacja (brak systemu mailowego)
     },
   });
 
