@@ -1,33 +1,58 @@
-const steps = [
+const features = [
   {
-    title: "Tworzysz markę",
-    description: "Wpisujesz nazwę, ton, słowa kluczowe i linkowania. Raz. AI już zawsze będzie wiedzieć jak pisać.",
+    icon: "🤖",
+    title: "Asystent AI",
+    description: "Generuj gotowe posty, caption do zdjęć i odpowiedzi na komentarze jednym kliknięciem.",
   },
   {
-    title: "Planujesz kalendarz",
-    description: "Wybierasz dni i kanały. Aplikacja proponuje tematy spójne z Twoją strategią.",
+    icon: "📅",
+    title: "Publikator",
+    description: "Planuj i automatycznie publikuj posty na wszystkich platformach ze wspólnego kalendarza.",
   },
   {
-    title: "Piszesz z AI",
-    description: "Klikasz post, AI generuje tekst z Twoimi słowami kluczowymi, hashtagami i linkowaniami.",
+    icon: "📥",
+    title: "Social Inbox",
+    description: "Wszystkie wiadomości, komentarze i recenzje z Instagrama, Facebooka i LinkedIn w jednym miejscu.",
+  },
+  {
+    icon: "📊",
+    title: "Analityka",
+    description: "Mierz zasięgi, zaangażowanie i wzrost obserwujących. Porównuj tygodnie i miesiące.",
+  },
+  {
+    icon: "📝",
+    title: "Raporty",
+    description: "Automatycznie generuj raporty PDF dla klientów lub szefa — ze swoim logo i danymi.",
+  },
+  {
+    icon: "👥",
+    title: "Zarządzanie zespółem",
+    description: "Dziel się dostępem z copywriterem, grafikiem lub klientem. Róle i uprawnienia.",
+  },
+  {
+    icon: "🔔",
+    title: "Auto-moderacja",
+    description: "Automatycznie odpowiadaj na częste pytania, ukrywaj spam i chroń markę na social mediach.",
   },
 ];
 
 export function JakToDziala() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-3xl font-semibold text-[#0F172A]">Jak to działa</h2>
-        <p className="mt-3 max-w-3xl text-[#475569]">
-          Trzy kroki od chaosu do systemu.
-        </p>
+    <section id="funkcje" className="bg-[#F8FAFC] py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="text-center">
+          <span className="mb-4 inline-block rounded-full bg-[#EEF2FF] px-4 py-1.5 text-sm font-medium text-[#5B7CFA]">FUNKCJE</span>
+          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Wszystko czego potrzebujesz</h2>
+          <p className="mt-4 text-gray-500">Jedno narzędzie zamiast 5 oddzielnych aplikacji.</p>
+        </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {steps.map((step) => (
-            <article key={step.title} className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
-              <h3 className="text-lg font-semibold text-[#0F172A]">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#475569]">{step.description}</p>
-            </article>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {features.map((f) => (
+            <div key={f.title} className="group rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:border-[#5B7CFA]/30 hover:shadow-lg">
+              <div className="mb-4 text-3xl">{f.icon}</div>
+              <h3 className="font-semibold text-gray-900">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-500">{f.description}</p>
+            </div>
           ))}
         </div>
       </div>
