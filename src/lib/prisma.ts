@@ -14,9 +14,6 @@ export const prisma =
 
     if (usePgAdapter) {
       const effectiveUrl = (() => {
-        if (process.env.NODE_ENV !== "development") {
-          return databaseUrl;
-        }
         try {
           const parsed = new URL(databaseUrl);
           parsed.searchParams.set("sslmode", "no-verify");
@@ -28,7 +25,7 @@ export const prisma =
 
       const pool = new Pool({
         connectionString: effectiveUrl,
-        ssl: process.env.NODE_ENV === "development" ? { rejectUnauthorized: false } : undefined,
+        ssl: { rejectUnauthorized: false },
       });
       const adapter = new PrismaPg(pool);
       return new PrismaClient({
