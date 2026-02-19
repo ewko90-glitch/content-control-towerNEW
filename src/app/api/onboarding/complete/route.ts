@@ -48,24 +48,48 @@ function buildProjectSlug(name: string): string {
   return slugify(name) || `projekt-${Date.now()}`;
 }
 
+const PLATFORM_TO_CHANNEL: Record<string, ChannelType> = {
+  facebook: "OTHER",
+  instagram: "INSTAGRAM",
+  "instagram-ads": "INSTAGRAM",
+  x: "OTHER",
+  linkedin: "LINKEDIN",
+  tiktok: "TIKTOK",
+  youtube: "YOUTUBE",
+  gmb: "OTHER",
+  wordpress: "BLOG",
+  shopify: "WEBSITE",
+};
+
 export async function POST(request: Request) {
   const user = await getUserFromRequest(request);
   if (!user) {
     return NextResponse.json({ error: "Brak autoryzacji" }, { status: 401 });
   }
 
-  const formData = await request.formData();
-  const workspaceName = String(formData.get("workspaceName") ?? "").trim();
-  const planTier = String(formData.get("planTier") ?? "STARTER") as PlanTier;
-  const projectName = String(formData.get("projectName") ?? "").trim();
-  const channels = formData
-    .getAll("channels")
-    .map((item) => String(item))
-    .filter((item): item is ChannelType => ALLOWED_CHANNELS.includes(item as ChannelType));
-
-  if (!workspaceName || !projectName) {
-    return NextResponse.json({ error: "Wypełnij wymagane pola" }, { status: 400 });
+  // Accept JSON from the onboarding wizard
+  let body: Record<string, unknown> = {};
+  try {
+    body = (await request.json()) as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ error: "Nieprawidłowy format danych" }, { status: 400 });
   }
+
+  const businessType = String(body.businessType ?? "").trim();
+  const platforms = Array.isArray(body.platforms) ? (body.platforms as string[]) : [];
+
+  // Derive workspace and project names from onboarding answers
+  const workspaceName = businessType || user.name || user.email.split("@")[0] || "Mój workspace";
+  const projectName = "Mój pierwszy projekt";
+  const planTier: PlanTier = "STARTER";
+
+  // Map platform IDs to ChannelType, deduplicate
+  const channelSet = new Set<ChannelType>();
+  for (const p of platforms) {
+    const mapped = PLATFORM_TO_CHANNEL[p];
+    if (mapped) channelSet.add(mapped);
+  }
+  const channels = Array.from(channelSet);
 
   const limits = PLAN_LIMITS[planTier] ?? PLAN_LIMITS.STARTER;
   const workspaceSlug = await buildUniqueWorkspaceSlug(workspaceName);

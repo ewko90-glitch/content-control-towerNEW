@@ -181,8 +181,9 @@ export function OnboardingWizard() {
   const handleFinish = async () => {
     setSubmitting(true);
     try {
-      await fetch("/api/onboarding/complete", {
+      const res = await fetch("https://content-control-tower-new.vercel.app/api/onboarding/complete", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           businessType,
@@ -192,8 +193,12 @@ export function OnboardingWizard() {
           teamEmails: emails,
         }),
       });
-      window.location.href = "/overview";
-    } catch {
+      if (!res.ok) {
+        console.error("Onboarding API error:", res.status, await res.text());
+      }
+      window.location.href = "https://content-control-tower-new.vercel.app/overview";
+    } catch (err) {
+      console.error("Onboarding fetch failed:", err);
       setSubmitting(false);
     }
   };
