@@ -1,7 +1,5 @@
-import { AuthLayout } from "@/components/layout/AuthLayout";
-import { Alert } from "@/components/ui/Alert";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
+import { LoginForm } from "@/components/auth/LoginForm";
+import Link from "next/link";
 
 type LoginPageProps = {
   searchParams: Promise<{ error?: string; success?: string; next?: string }>;
@@ -11,26 +9,23 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const params = await searchParams;
 
   return (
-    <AuthLayout title="Logowanie" description="Witaj ponownie. Zaloguj się, aby kontynuować.">
-      <form action="/api/auth/login" method="post" className="space-y-4">
-        {params.error ? <Alert variant="danger">{params.error || "Nieprawidłowy email lub hasło."}</Alert> : null}
-        {params.success ? <Alert variant="success">{params.success}</Alert> : null}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-white px-4 py-12">
+      {/* Logo */}
+      <Link href="/" className="mb-8 flex items-center gap-2">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5B7CFA]">
+          <span className="text-sm font-bold text-white">S</span>
+        </div>
+        <span className="font-bold text-gray-900">Social AI Studio</span>
+      </Link>
 
-        <input type="hidden" name="next" value={params.next ?? ""} />
-
-        <Input name="email" type="email" required label="Email" hint="Wpisz poprawny adres email." />
-        <Input name="password" type="password" required label="Hasło" />
-
-        <Button type="submit" className="w-full">
-          Zaloguj się
-        </Button>
-      </form>
-      <p className="mt-4 text-sm text-muted">
-        <a href="/auth/reset">Nie pamiętasz hasła?</a>
-      </p>
-      <p className="mt-2 text-sm text-muted">
-        Nie masz konta? <a href="/auth/register">Zarejestruj się</a>
-      </p>
-    </AuthLayout>
+      <div className="w-full max-w-md">
+        <h1 className="mb-6 text-center text-3xl font-bold text-gray-900">Zaloguj</h1>
+        <LoginForm
+          error={params.error}
+          success={params.success}
+          next={params.next}
+        />
+      </div>
+    </main>
   );
 }
