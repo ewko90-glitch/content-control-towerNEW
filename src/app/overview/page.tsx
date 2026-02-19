@@ -12,6 +12,7 @@ import type { ActionTarget } from "@/lib/domain/controlTowerV3/index";
 import { prisma } from "@/lib/prisma";
 import { cn } from "@/styles/cn";
 
+import { WelcomeModal } from "@/components/ui/WelcomeModal";
 import { requireUser } from "../../lib/auth/session";
 
 type TimelineTab = "today" | "tomorrow" | "week";
@@ -476,6 +477,7 @@ export default async function OverviewPage({ searchParams }: OverviewPageProps) 
       activeHref="/overview"
       workspaceSlug={activeMembership.workspace.slug}
     >
+      <WelcomeModal />
       {/* ========== PRZEŁĄCZNIK TRYBU ========== */}
       <div className="mb-4 flex gap-2">
         <a
