@@ -71,6 +71,13 @@ export default async function NewProjectPage() {
       tonRaw === "dynamiczny" || tonRaw === "techniczny" || tonRaw === "ludzki" ? tonRaw : "profesjonalny";
     const grupaDocelowa = String(formData.get("grupaDocelowa") ?? "").trim();
 
+    // Nowe pola socialProfiles
+    const websiteUrl = String(formData.get("websiteUrl") ?? "").trim();
+    const linkedinUrl = String(formData.get("linkedinUrl") ?? "").trim();
+    const blogUrl = String(formData.get("blogUrl") ?? "").trim();
+    const instagramUrl = String(formData.get("instagramUrl") ?? "").trim();
+    const newsletterUrl = String(formData.get("newsletterUrl") ?? "").trim();
+
     const project = createProject(workspace.workspace.id, {
       nazwa,
       typ,
@@ -89,6 +96,13 @@ export default async function NewProjectPage() {
           .map((item) => Number(item))
           .filter((item) => Number.isInteger(item) && item >= 1 && item <= 7),
         czestotliwoscTygodniowa: Math.max(1, Number(String(formData.get("czestotliwoscTygodniowa") ?? "1"))),
+      },
+      socialProfiles: {
+        websiteUrl: websiteUrl || undefined,
+        linkedinUrl: linkedinUrl || undefined,
+        blogUrl: blogUrl || undefined,
+        instagramUrl: instagramUrl || undefined,
+        newsletterUrl: newsletterUrl || undefined,
       },
     });
 

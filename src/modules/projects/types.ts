@@ -13,6 +13,14 @@ export type ExternalLink = {
   note?: string;
 };
 
+export type SocialProfiles = {
+  linkedinUrl?: string;
+  instagramUrl?: string;
+  blogUrl?: string;
+  newsletterUrl?: string;
+  websiteUrl?: string;
+};
+
 export type ProjectContextInput = {
   name: string;
   summary: string;
@@ -24,6 +32,7 @@ export type ProjectContextInput = {
   keywordsSecondary: string[];
   internalLinks: InternalLink[];
   externalLinks: ExternalLink[];
+  socialProfiles?: SocialProfiles;
 };
 
 export type ProjectReadiness = {

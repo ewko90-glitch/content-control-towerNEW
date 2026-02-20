@@ -12,44 +12,44 @@ const hardRequirementIds = new Set([
 
 const requirementMeta: Record<string, { label: string; fixHint: string }> = {
   name: {
-    label: "Project name",
-    fixHint: "Set a clear project name to anchor your content operations.",
+    label: "Nazwa projektu",
+    fixHint: "Podaj nazwe projektu — to fundament kontekstu AI.",
   },
   summary: {
-    label: "Project summary",
-    fixHint: "Add at least 120 characters explaining the project scope and promise.",
+    label: "Opis projektu",
+    fixHint: "Dodaj co najmniej 120 znakow opisujacych projekt i jego obietnice.",
   },
   audience: {
-    label: "Audience",
-    fixHint: "Describe your audience in at least 80 characters with role and needs.",
+    label: "Grupa docelowa",
+    fixHint: "Opisz odbiorce — min. 80 znakow, rola i potrzeby.",
   },
   goals: {
-    label: "Goals",
-    fixHint: "Define at least 80 characters of measurable goals for this project.",
+    label: "Cele contentu",
+    fixHint: "Zdefiniuj mierzalne cele — min. 80 znakow.",
   },
   toneOfVoice: {
-    label: "Tone of voice",
-    fixHint: "Provide a clear tone with at least 3 characters.",
+    label: "Ton komunikacji",
+    fixHint: "Podaj ton — np. ekspercki, przyjazny, bezposredni (min. 3 znaki).",
   },
   channels: {
-    label: "Channels",
-    fixHint: "Select at least one channel where content will be published.",
+    label: "Kanaly publikacji",
+    fixHint: "Wybierz co najmniej jeden kanal publikacji.",
   },
   keywordsPrimary: {
-    label: "Primary keywords",
-    fixHint: "Add at least 5 primary keywords that describe your offer.",
+    label: "Glowne slowa kluczowe",
+    fixHint: "Dodaj co najmniej 5 glownych slow kluczowych.",
   },
   keywordsSecondary: {
-    label: "Secondary keywords",
-    fixHint: "Add at least 3 secondary keywords to expand topical coverage.",
+    label: "Dodatkowe slowa kluczowe",
+    fixHint: "Dodaj co najmniej 3 dodatkowe slowa kluczowe.",
   },
   internalLinks: {
-    label: "Internal links",
-    fixHint: "Add at least 3 internal links to improve topic authority and navigation.",
+    label: "Linki wewnetrzne",
+    fixHint: "Dodaj co najmniej 3 linki wewnetrzne (URL i nazwa).",
   },
   externalLinks: {
-    label: "External links",
-    fixHint: "Add at least 1 external authority link for supporting evidence.",
+    label: "Linki zewnetrzne",
+    fixHint: "Dodaj co najmniej 1 link zewnetrzny (autorytet, zrodlo).",
   },
 };
 
@@ -77,31 +77,31 @@ export function validateProjectContext(input: ProjectContextInput): { errors: Pr
   const errors: ProjectValidationError[] = [];
 
   if (cleanText(input.name).length === 0) {
-    errors.push({ field: "name", message: "Project name is required." });
+    errors.push({ field: "name", message: "Nazwa projektu jest wymagana." });
   }
   if (cleanText(input.summary).length < 120) {
-    errors.push({ field: "summary", message: "Summary must be at least 120 characters." });
+    errors.push({ field: "summary", message: "Opis musi miec co najmniej 120 znakow." });
   }
   if (cleanText(input.audience).length < 80) {
-    errors.push({ field: "audience", message: "Audience must be at least 80 characters." });
+    errors.push({ field: "audience", message: "Grupa docelowa musi miec co najmniej 80 znakow." });
   }
   if (cleanText(input.goals).length < 80) {
-    errors.push({ field: "goals", message: "Goals must be at least 80 characters." });
+    errors.push({ field: "goals", message: "Cele musza miec co najmniej 80 znakow." });
   }
   if (cleanText(input.toneOfVoice).length < 3) {
-    errors.push({ field: "toneOfVoice", message: "Tone of voice must be at least 3 characters." });
+    errors.push({ field: "toneOfVoice", message: "Ton komunikacji musi miec co najmniej 3 znaki." });
   }
   if (input.channels.length < 1) {
-    errors.push({ field: "channels", message: "Select at least one channel." });
+    errors.push({ field: "channels", message: "Wybierz co najmniej jeden kanal." });
   }
   if (countNonEmpty(input.keywordsPrimary) < 5) {
-    errors.push({ field: "keywordsPrimary", message: "Add at least 5 primary keywords." });
+    errors.push({ field: "keywordsPrimary", message: "Dodaj co najmniej 5 glownych slow kluczowych." });
   }
   if (countInternalLinks(input.internalLinks) < 3) {
-    errors.push({ field: "internalLinks", message: "Add at least 3 internal links with URL and title." });
+    errors.push({ field: "internalLinks", message: "Dodaj co najmniej 3 linki wewnetrzne z URL i nazwa." });
   }
   if (countExternalLinks(input.externalLinks) < 1) {
-    errors.push({ field: "externalLinks", message: "Add at least 1 external link with URL and title." });
+    errors.push({ field: "externalLinks", message: "Dodaj co najmniej 1 link zewnetrzny z URL i nazwa." });
   }
 
   return { errors };

@@ -23,6 +23,11 @@ type FormState = {
   kanaly: string;
   dniTygodnia: string;
   czestotliwoscTygodniowa: string;
+  linkedinUrl: string;
+  instagramUrl: string;
+  blogUrl: string;
+  newsletterUrl: string;
+  websiteUrl: string;
 };
 
 const initialState: FormState = {
@@ -40,6 +45,11 @@ const initialState: FormState = {
   kanaly: "",
   dniTygodnia: "1,3,5",
   czestotliwoscTygodniowa: "3",
+  linkedinUrl: "",
+  instagramUrl: "",
+  blogUrl: "",
+  newsletterUrl: "",
+  websiteUrl: "",
 };
 
 function parseList(value: string): string[] {
@@ -175,13 +185,101 @@ export function NewProjectWizard({ action }: NewProjectWizardProps) {
 
       {krok === 4 ? (
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#0F172A]">4) Kanały publikacji</h2>
-          <p className="text-sm text-[#475569]">Kanały wpisuj po przecinku, format: typ:nazwa</p>
+          <h2 className="text-xl font-semibold text-[#0F172A]">4) Profile i kanały</h2>
+          <p className="text-sm text-[#475569]">
+            Podaj URLe swoich kanałów — AI będzie wiedział gdzie publikujesz.
+          </p>
 
-          <textarea name="kanaly" value={form.kanaly} onChange={(e) => setForm({ ...form, kanaly: e.target.value })} placeholder="wordpress:Blog firmowy, linkedin:Profil CEO" className="min-h-[100px] w-full rounded-2xl border border-[#E2E8F0] p-3 text-sm text-[#0F172A]" />
-          <div className="grid gap-3 md:grid-cols-2">
-            <input name="dniTygodnia" value={form.dniTygodnia} onChange={(e) => setForm({ ...form, dniTygodnia: e.target.value })} placeholder="1,3,5" className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]" />
-            <input name="czestotliwoscTygodniowa" value={form.czestotliwoscTygodniowa} onChange={(e) => setForm({ ...form, czestotliwoscTygodniowa: e.target.value })} placeholder="3" className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]" />
+          <div className="space-y-3">
+            <div>
+              <label className="mb-1 block text-xs font-medium text-[#475569]">
+                Strona WWW / domena
+              </label>
+              <input
+                name="websiteUrl"
+                value={form.websiteUrl}
+                onChange={(e) => setForm({ ...form, websiteUrl: e.target.value })}
+                placeholder="https://twojafirma.pl"
+                className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-[#475569]">
+                LinkedIn (profil lub strona firmy)
+              </label>
+              <input
+                name="linkedinUrl"
+                value={form.linkedinUrl}
+                onChange={(e) => setForm({ ...form, linkedinUrl: e.target.value })}
+                placeholder="https://linkedin.com/in/jankowalski"
+                className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-[#475569]">
+                Blog / WordPress
+              </label>
+              <input
+                name="blogUrl"
+                value={form.blogUrl}
+                onChange={(e) => setForm({ ...form, blogUrl: e.target.value })}
+                placeholder="https://twojafirma.pl/blog"
+                className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-[#475569]">
+                Instagram
+              </label>
+              <input
+                name="instagramUrl"
+                value={form.instagramUrl}
+                onChange={(e) => setForm({ ...form, instagramUrl: e.target.value })}
+                placeholder="https://instagram.com/twojasmarka"
+                className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-[#475569]">
+                Newsletter (URL strony zapisu)
+              </label>
+              <input
+                name="newsletterUrl"
+                value={form.newsletterUrl}
+                onChange={(e) => setForm({ ...form, newsletterUrl: e.target.value })}
+                placeholder="https://twojafirma.pl/newsletter"
+                className="h-11 w-full rounded-2xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-3">
+            <p className="text-xs font-medium text-[#475569]">
+              Kanały publikacji (harmonogram)
+            </p>
+            <div className="mt-2 grid gap-2 md:grid-cols-2">
+              <input
+                name="dniTygodnia"
+                value={form.dniTygodnia}
+                onChange={(e) => setForm({ ...form, dniTygodnia: e.target.value })}
+                placeholder="Dni tygodnia np. 1,3,5"
+                className="h-10 w-full rounded-xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+              <input
+                name="czestotliwoscTygodniowa"
+                value={form.czestotliwoscTygodniowa}
+                onChange={(e) => setForm({ ...form, czestotliwoscTygodniowa: e.target.value })}
+                placeholder="Posty tygodniowo np. 3"
+                className="h-10 w-full rounded-xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+              />
+            </div>
+            <input
+              name="kanaly"
+              value={form.kanaly}
+              onChange={(e) => setForm({ ...form, kanaly: e.target.value })}
+              placeholder="wordpress:Blog, linkedin:Profil CEO"
+              className="mt-2 h-10 w-full rounded-xl border border-[#E2E8F0] px-3 text-sm text-[#0F172A]"
+            />
           </div>
         </div>
       ) : null}
@@ -198,6 +296,9 @@ export function NewProjectWizard({ action }: NewProjectWizardProps) {
             <p><span className="font-medium text-[#0F172A]">Grupa docelowa:</span> {form.grupaDocelowa || "—"}</p>
             <p><span className="font-medium text-[#0F172A]">Klastry:</span> {form.glowneKlastry || "—"}</p>
             <p><span className="font-medium text-[#0F172A]">Kanały:</span> {form.kanaly || "—"}</p>
+            <p><span className="font-medium text-[#0F172A]">LinkedIn:</span> {form.linkedinUrl || "—"}</p>
+            <p><span className="font-medium text-[#0F172A]">Blog:</span> {form.blogUrl || "—"}</p>
+            <p><span className="font-medium text-[#0F172A]">Instagram:</span> {form.instagramUrl || "—"}</p>
           </div>
         </div>
       ) : null}

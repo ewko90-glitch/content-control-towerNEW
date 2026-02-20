@@ -2,6 +2,14 @@ import { listMembers } from "@/lib/team/teamStore";
 
 export type ProjectType = "domena" | "linkedin_osoba";
 
+export type SocialProfiles = {
+  websiteUrl?: string;
+  linkedinUrl?: string;
+  instagramUrl?: string;
+  blogUrl?: string;
+  newsletterUrl?: string;
+};
+
 export type WorkspaceRole = "owner" | "manager" | "redaktor" | "podglad";
 
 export type ProjectMember = {
@@ -37,6 +45,7 @@ export type ProjectProfile = {
   cadence: { dniTygodnia: number[]; czestotliwoscTygodniowa: number };
   projectMembers: ProjectMember[];
   policies?: ProjectPolicies;
+  socialProfiles?: SocialProfiles;
   createdAtISO: string;
 };
 
@@ -210,6 +219,7 @@ export function updateProjectProfile(
     konkurenci: updates.konkurenci ?? existing.konkurenci,
     linkiWewnetrzne: updates.linkiWewnetrzne ?? existing.linkiWewnetrzne,
     linkiZewnetrzne: updates.linkiZewnetrzne ?? existing.linkiZewnetrzne,
+    socialProfiles: updates.socialProfiles ?? existing.socialProfiles,
     projectMembers: existing.projectMembers ?? [{ memberId: "member_owner" }],
     policies: normalizePolicies(existing.policies),
   };
