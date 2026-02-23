@@ -9,6 +9,7 @@ import type { PlanId } from "@/lib/billing/planConfig";
 import { getProject, getProjectMembers, getProjectPolicies, listAuditEvents, setProjectMembers, updateProjectPolicies, updateProjectProfile, type ProjectMember } from "@/lib/projects/projectStore";
 import { resolveActiveWorkspace } from "@/lib/projects/resolveActiveWorkspace";
 import { listMembers, type WorkspaceRole } from "@/lib/team/teamStore";
+import { AiSiteAnalyzer } from "@/components/projects/AiSiteAnalyzer";
 
 type ProjectSettingsPageProps = {
   params: Promise<{ projectId: string }>;
@@ -194,6 +195,9 @@ export default async function ProjectSettingsPage({ params, searchParams }: Proj
           <Link href={`/projects/${project.id}`} className="text-sm font-medium text-[#5B7CFA] hover:underline">Wróć do przeglądu</Link>
         </div>
 
+        <div className="mb-4">
+          <AiSiteAnalyzer initialUrl={project.domenaLubKanal} />
+        </div>
         <ProjectSettingsForm
           onSave={saveAction}
           saved={query.saved === "1"}
