@@ -20,6 +20,8 @@ import {
 } from "@/lib/projectStore";
 import { uiCopy } from "@/lib/uiCopy";
 
+import { AiSiteAnalyzer } from "@/components/projects/AiSiteAnalyzer";
+
 const t = uiCopy.pl;
 
 function planLabel(value: string): string {
@@ -107,6 +109,10 @@ export function ProjectSettingsClient({ workspaceSlug }: Props) {
         title="Polityki projektu"
         subtitle="Deterministyczna warstwa nadzoru dla AI i publikacji."
       />
+
+      <div className="mb-4">
+        <AiSiteAnalyzer />
+      </div>
 
       <div className="space-y-4">
         <Card className="rounded-2xl border border-border bg-surface shadow-soft">
