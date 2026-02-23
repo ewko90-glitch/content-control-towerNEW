@@ -32,6 +32,12 @@ export function ProjectCard({ project, planId, tokenState }: ProjectCardProps) {
       >
         Otwórz projekt
       </Link>
+      <Link
+        href={`/projects/${project.id}/ustawienia`}
+        className="mt-2 inline-flex h-10 items-center justify-center rounded-2xl border border-[#E2E8F0] px-4 text-sm font-medium text-[#475569] transition-colors hover:bg-[#F8FAFC]"
+      >
+        Ustawienia projektu
+      </Link>
     </article>
   );
 }
