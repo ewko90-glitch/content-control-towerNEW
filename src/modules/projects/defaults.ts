@@ -26,88 +26,88 @@ export const defaultProjectContext: Omit<ProjectContextInput, "name"> = {
 export const projectTemplates: ProjectTemplate[] = [
   {
     id: "blog-first",
-    label: "Content Marketing — Blog First",
-    description: "Long-form authority content with SEO depth and conversion-oriented internal linking.",
+    label: "Content Marketing — Blog na pierwszym miejscu",
+    description: "Dlugodystansowy content z glebokim SEO i linkowaniem zorientowanym na konwersje.",
     context: {
       summary:
-        "Build category authority through educational, search-focused blog content that consistently converts strategic readers into pipeline conversations.",
+        "Buduj autorytet w kategorii poprzez edukacyjny content blogowy skupiony na wyszukiwarce, ktory konsekwentnie zamienia czytelnikow w rozmowy biznesowe.",
       audience:
-        "Growth and marketing leaders in B2B companies who need predictable content systems, stronger organic reach, and better conversion from thought leadership.",
-      toneOfVoice: "Strategic, clear, executive, practical",
+        "Liderzy marketingu i wzrostu w firmach B2B, ktorzy potrzebuja przewidywalnych systemow contentowych, silniejszego zasięgu organicznego i lepszej konwersji z content marketingu.",
+      toneOfVoice: "Strategiczny, klarowny, ekspercki, praktyczny",
       goals:
-        "Increase qualified organic traffic, improve topical authority, and drive measurable conversion from educational content into commercial intent.",
+        "Zwiekszenie kwalifikowanego ruchu organicznego, poprawa autorytetu tematycznego i mierzalna konwersja z contentu edukacyjnego w komercyjne zapytania.",
       channels: ["blog", "newsletter"],
-      keywordsPrimary: ["content strategy", "b2b content", "seo framework", "editorial workflow", "content operations"],
-      keywordsSecondary: ["topic clusters", "conversion copy", "editorial planning"],
+      keywordsPrimary: ["strategia contentu", "content b2b", "framework seo", "workflow redakcyjny", "operacje contentowe"],
+      keywordsSecondary: ["klastry tematyczne", "copywriting konwertujacy", "planowanie redakcyjne"],
       internalLinks: [
         {
           url: "https://twoja-domena.pl/oferta",
           title: "Oferta",
-          note: "Replace with your commercial offer page URL.",
-          anchorHints: ["content strategy services", "b2b content support"],
+          note: "Zastap adresem URL swojej strony z oferta.",
+          anchorHints: ["usluga strategii contentu", "wsparcie content b2b"],
         },
         {
           url: "https://twoja-domena.pl/case-studies",
           title: "Case studies",
-          note: "Point to proof and outcomes pages.",
-          anchorHints: ["content growth results", "client outcomes"],
+          note: "Wskazuj na strony z dowodami i wynikami.",
+          anchorHints: ["wyniki content marketingu", "efekty dla klientow"],
         },
         {
           url: "https://twoja-domena.pl/blog",
           title: "Blog hub",
-          note: "Use as topical cluster parent page.",
-          anchorHints: ["related guides", "read next"],
+          note: "Uzyj jako strony glownej klastra tematycznego.",
+          anchorHints: ["powiazane poradniki", "czytaj dalej"],
         },
       ],
       externalLinks: [
         {
           url: "https://developers.google.com/search/docs",
           title: "Google Search Central",
-          note: "Reference technical and quality guidance.",
+          note: "Odwolaj sie do wytycznych technicznych i jakosciowych.",
         },
       ],
     },
   },
   {
     id: "linkedin-first",
-    label: "Founder Brand — LinkedIn First",
-    description: "Executive-led narrative system optimized for weekly reach, trust, and conversation quality.",
+    label: "Marka Foundera — LinkedIn na pierwszym miejscu",
+    description: "System narracji eksperta zoptymalizowany pod zasieg tygodniowy, zaufanie i jakosc rozmow.",
     context: {
       summary:
-        "Build founder authority through high-signal LinkedIn content that turns expertise into trust, inbound conversations, and strategic opportunities.",
+        "Buduj autorytet foundera przez wysokiej jakosci content na LinkedIn, ktory zamienia ekspertyze w zaufanie, przychodzace rozmowy i strategiczne szanse biznesowe.",
       audience:
-        "Founders, commercial leaders, and decision makers evaluating strategic partners, looking for concise, practical thought leadership.",
-      toneOfVoice: "Confident, concise, insight-led, human",
+        "Founderzy, liderzy komercyjni i decydenci poszukujacy strategicznych partnerow, zainteresowani zwiezlym i praktycznym thought leadership.",
+      toneOfVoice: "Pewny siebie, zwiezly, oparty na insightach, ludzki",
       goals:
-        "Increase weekly qualified reach, improve engagement quality, and convert strategic attention into meaningful business conversations.",
+        "Zwiekszenie kwalifikowanego zasiegu tygodniowego, poprawa jakosci zaangazowania i konwersja strategicznej uwagi w wartosciowe rozmowy biznesowe.",
       channels: ["linkedin", "newsletter"],
-      keywordsPrimary: ["founder brand", "linkedin strategy", "thought leadership", "executive content", "brand positioning"],
-      keywordsSecondary: ["audience trust", "content cadence", "inbound pipeline"],
+      keywordsPrimary: ["marka foundera", "strategia linkedin", "thought leadership", "content ekspercki", "pozycjonowanie marki"],
+      keywordsSecondary: ["zaufanie odbiorcy", "rytm publikacji", "pipeline przychodzacy"],
       internalLinks: [
         {
           url: "https://twoja-domena.pl/about",
           title: "About",
-          note: "Replace with founder profile and positioning page.",
-          anchorHints: ["founder perspective", "why we exist"],
+          note: "Zastap adresem strony profilu i pozycjonowania foundera.",
+          anchorHints: ["perspektywa foundera", "dlaczego istniejemy"],
         },
         {
           url: "https://twoja-domena.pl/services",
           title: "Services",
-          note: "Direct strategic traffic to your offer page.",
-          anchorHints: ["work with us", "engagement model"],
+          note: "Kieruj strategiczny ruch na strone oferty.",
+          anchorHints: ["wspolpraca", "model wspolpracy"],
         },
         {
           url: "https://twoja-domena.pl/resources",
           title: "Resources",
-          note: "Support credibility with deeper materials.",
-          anchorHints: ["deep dive", "learn more"],
+          note: "Wspieraj wiarygodnosc glebszymi materialami.",
+          anchorHints: ["poglebiona analiza", "dowiedz sie wiecej"],
         },
       ],
       externalLinks: [
         {
           url: "https://business.linkedin.com/marketing-solutions",
           title: "LinkedIn Marketing Solutions",
-          note: "Reference platform best practices and formats.",
+          note: "Odwolaj sie do najlepszych praktyk i formatow platformy.",
         },
       ],
     },
